@@ -1,25 +1,48 @@
 CREATE TABLE profesores (
-    id INT PRIMARY KEY,
-    nombre VARCHAR(100),
-    correo VARCHAR(100),
-    aceptado BOOLEAN,
-    gestion_id INT,
-    FOREIGN KEY (gestion_id) REFERENCES gestions(id)
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nombre VARCHAR(100) NOT NULL,
+    nombreCompleto VARCHAR(100) NOT NULL,
+    correo VARCHAR(100) NOT NULL,
+    gestion_id INT
 );
 
 CREATE TABLE alumnos (
-    id INT PRIMARY KEY,
-    nombre VARCHAR(100),
-    correo VARCHAR(100),
-    aceptado BOOLEAN,
-    FOREIGN KEY (id) REFERENCES profesores(id)
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nombre VARCHAR(100) NOT NULL,
+    NombreCompleto VARCHAR(100) NOT NULL,
+    correo VARCHAR(100) NOT NULL
 );
 
 CREATE TABLE cursos (
     id INT PRIMARY KEY,
     nombre VARCHAR(100),
-    profesorPropietario VARCHAR(100),
+    profesorPropietario INT NOT NULL,
+    FOREIGN KEY (profesorPropietario) REFERENCES profesores(id)
+);
 
+
+CREATE TABLE profesoresAceptados(
+    curso INT NOT NULL,
+    profesor INT NOT NULL,
+    FOREIGN KEY(profesor) REFERENCES profesores(id),
+    FOREIGN KEY (curso) REFERENCES  cursos(id)
+);
+
+CREATE TABLE alumnosAceptados(
+    curso INT NOT NULL,
+    profesor INT NOT NULL,
+    FOREIGN KEY(profesor) REFERENCES profesores(id),
+    FOREIGN KEY (curso) REFERENCES  cursos(id),
+    PRIMARY KEY (curso, profesor)
+);
+
+CREATE TABLE SOFTSKILLS(
+    id INT PRIMARY KEY,
+    alumnoEvaluador INT,
+    alumnoEvaluado INT,
+    evaluacion INT,
+    FOREIGN KEY (alumnoEvaluado) REFERENCES alumno(id),
+    FOREIGN KEY (alumnoEvaluador) REFERENCES alumno(id)
 );
 
 CREATE TABLE ranking (
@@ -27,7 +50,6 @@ CREATE TABLE ranking (
     clave_cifrada VARCHAR(100),
     alumno_id INT,
     curso_id INT,
-    codicia INT,
     clave_p VARCHAR(100),
     evaluacion INT,
     progreso TINYINT,
@@ -38,10 +60,16 @@ CREATE TABLE ranking (
 CREATE TABLE tareas (
     id INT PRIMARY KEY,
     recompensa VARCHAR(100),
-    nota TINYINT,
     fecha DATE,
     ranking_id INT,
     FOREIGN KEY (ranking_id) REFERENCES ranking(id)
+);
+
+CREATE TABLE notas(
+    idNota INT PRIMARY KEY,
+    alumno INT, 
+    nota INT,
+    FOREIGN KEY (alumno) REFERENCES alumnos (id)
 );
 
 CREATE TABLE participan (
