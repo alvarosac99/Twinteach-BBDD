@@ -12,3 +12,9 @@
 
 --una vez tengas en el inventario x item (llave), tendras acceso a mapa (tabla tierras), donde tendrás una capital, unas tierras
 --y unos recuros que se te añadiran al inventario.
+
+--abrir cofre
+--atacar
+--conquistar terreno
+--dar sofskill
+--comprar en la tienda
