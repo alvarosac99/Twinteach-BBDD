@@ -1,7 +1,7 @@
 --registrarse / iniciar sesion
 
-INSERT INTO alumnos (nombre, correo)
-VALUES ('nombrecito', 'correito');
+INSERT INTO alumnos (nombre, nombreCompleto, correo)
+VALUES ('nombrecito', 'nombreCompletitio', 'correito');
 
 SELECT nombre, correo
 FROM alumnos

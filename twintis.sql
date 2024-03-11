@@ -1,5 +1,6 @@
 CREATE TABLE profesores (
     id INT PRIMARY KEY AUTO_INCREMENT,
+    claveCifrada VARCHAR(100),
     nombre VARCHAR(100) NOT NULL,
     nombreCompleto VARCHAR(100) NOT NULL,
     correo VARCHAR(100) NOT NULL,
@@ -8,9 +9,11 @@ CREATE TABLE profesores (
 
 CREATE TABLE alumnos (
     id INT PRIMARY KEY AUTO_INCREMENT,
+    claveCifrada VARCHAR(100),
     nombre VARCHAR(100) NOT NULL,
     NombreCompleto VARCHAR(100) NOT NULL,
-    correo VARCHAR(100) NOT NULL
+    correo VARCHAR(100) NOT NULL UNIQUE,
+    CHECK (correo REGEXP "[A-Za-z0-9]+@[A-Za-z0-9]+\.[A-Za-z]+"),
 );
 
 CREATE TABLE cursos (
@@ -41,13 +44,12 @@ CREATE TABLE SOFTSKILLS(
     alumnoEvaluador INT,
     alumnoEvaluado INT,
     evaluacion INT,
-    FOREIGN KEY (alumnoEvaluado) REFERENCES alumno(id),
-    FOREIGN KEY (alumnoEvaluador) REFERENCES alumno(id)
+    FOREIGN KEY (alumnoEvaluado) REFERENCES alumnos(id),
+    FOREIGN KEY (alumnoEvaluador) REFERENCES alumnos(id)
 );
 
 CREATE TABLE ranking (
     id INT PRIMARY KEY,
-    clave_cifrada VARCHAR(100),
     alumno_id INT,
     curso_id INT,
     clave_p VARCHAR(100),
