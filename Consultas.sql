@@ -1,6 +1,14 @@
---iniciar sesion / registrarse 
+--registrarse / iniciar sesion
+
+INSERT INTO alumnos (nombre, correo)
+VALUES ('nombrecito', 'correito');
+
+SELECT nombre, correo
+FROM alumnos
+WHERE nombre = 'nombrecito' AND correo = 'correito';
 --(Se puede elegir entre alumno y profesor, se rellenara la tabla de su correspondiente)
--- Entras en la tabla Aumno o profesor 
+
+
 --ya dentro puedes elegir cursos, donde previamente el profesor te haya introducido
 --Tienes un inventario para cada curso con todo lo que conlleva
 

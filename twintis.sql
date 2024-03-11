@@ -17,7 +17,9 @@ CREATE TABLE alumnos (
 
 CREATE TABLE cursos (
     id INT PRIMARY KEY,
-    nombre VARCHAR(100)
+    nombre VARCHAR(100),
+    profesorPropietario VARCHAR(100),
+
 );
 
 CREATE TABLE ranking (
