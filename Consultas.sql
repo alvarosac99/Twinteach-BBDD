@@ -24,5 +24,14 @@ WHERE nombre = 'nombrecito' AND correo = 'correito';
 --abrir cofre
 --atacar
 --conquistar terreno
---dar sofskill
+--ver tus sofskill
 --comprar en la tienda
+
+--abrir un ranking
+--crear un ranking`
+--seleccionar ranking entre otros y ver tareas de ese ranking
+--mirar notificaciones recientes
+--ver clasificion de mapa
+
+--usar item (catalejo, bomba, etc) sobre alguien
+--elegir cursos
