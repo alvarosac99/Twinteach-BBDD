@@ -12,7 +12,16 @@ WHERE nombre = 'nombrecito' AND correo = 'correito';
 --ya dentro puedes elegir cursos, donde previamente el profesor te haya introducido
 --Tienes un inventario para cada curso con todo lo que conlleva
 
---entrar en rankings creados por el profesor 
+--rankings
+
+--clickar en la pestaña rankings para ver los disponibles del curso
+SELECT id
+FROM ranking
+JOIN cursos ON curso_id = cursos.id
+WHERE curso_id = --cursito en el que busca el alumno
+;
+
+
 --en los que hay tareas en las que participan alumnos
 --y que dan recompensas dependiendo de la nota en la tarea
 
