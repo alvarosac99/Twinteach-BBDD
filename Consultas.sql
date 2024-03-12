@@ -21,6 +21,11 @@ JOIN cursos ON curso_id = cursos.id
 WHERE curso_id = --cursito en el que busca el alumno
 ;
 
+--ver el ranking de esa asignatura
+SELECT curso_id, id, alumno, evaluacion
+FROM ranking
+WHERE id = --asignatura que se quiere mirar
+
 
 --en los que hay tareas en las que participan alumnos
 --y que dan recompensas dependiendo de la nota en la tarea
@@ -31,9 +36,29 @@ WHERE curso_id = --cursito en el que busca el alumno
 --y unos recuros que se te añadiran al inventario.
 
 --abrir cofre
+SELECT id
+FROM inventario
+WHERE id = --el id de cualquiera de los cofres
+
+
 --atacar
+SELECT id, nombre, nombreCompleto
+FROM alumnos
+WHERE id = --alumno al que quieres atacar
+
+
 --conquistar terreno
+SELECT id
+FROM tierras
+WHERE id = --tierra seleccionada
+
+
 --ver tus sofskill
+SELECT id, evaluacion
+FROM SOFTSKILLS
+WHERE alumnoEvaluado = --id del usuario
+
+
 --comprar en la tienda
 
 --abrir un ranking
