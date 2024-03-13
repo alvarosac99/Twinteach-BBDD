@@ -69,8 +69,11 @@ INSERT INTO inventario (id, cantidad, objeto, tipo, alumno_id)
 VALUES (/*id del objeto*/, 1, /*nombre*/, /*tipo*/, /*id del alumno*/);
 
 
---abrir un ranking
---crear un ranking`
+--crear un ranking
+INSERT INTO rankings (curso_id)
+VALUES (/*id del cursito*/);
+
+
 --seleccionar ranking entre otros y ver tareas de ese ranking
 --mirar notificaciones recientes
 --ver clasificion de mapa
