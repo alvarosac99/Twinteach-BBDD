@@ -25,6 +25,7 @@ WHERE curso_id = --cursito en el que busca el alumno
 SELECT curso_id, id, alumno, evaluacion
 FROM ranking
 WHERE id = --asignatura que se quiere mirar
+;
 
 
 --en los que hay tareas en las que participan alumnos
@@ -39,27 +40,34 @@ WHERE id = --asignatura que se quiere mirar
 SELECT id
 FROM inventario
 WHERE id = --el id de cualquiera de los cofres
+;
 
 
 --atacar
 SELECT id, nombre, nombreCompleto
 FROM alumnos
 WHERE id = --alumno al que quieres atacar
+;
 
 
 --conquistar terreno
 SELECT id
 FROM tierras
 WHERE id = --tierra seleccionada
+;
 
 
 --ver tus sofskill
 SELECT id, evaluacion
 FROM SOFTSKILLS
 WHERE alumnoEvaluado = --id del usuario
+;
 
 
 --comprar en la tienda
+INSERT INTO inventario (id, cantidad, objeto, tipo, alumno_id)
+VALUES (/*id del objeto*/, 1, /*nombre*/, /*tipo*/, /*id del alumno*/);
+
 
 --abrir un ranking
 --crear un ranking`
