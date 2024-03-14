@@ -12,8 +12,6 @@ WHERE nombre = 'nombrecito' AND correo = 'correito';
 --ya dentro puedes elegir cursos, donde previamente el profesor te haya introducido
 --Tienes un inventario para cada curso con todo lo que conlleva
 
---rankings
-
 --clickar en la pestaña rankings para ver los disponibles del curso
 SELECT id
 FROM ranking
@@ -75,11 +73,24 @@ VALUES (/*id del cursito*/);
 
 
 --seleccionar ranking entre otros y ver tareas de ese ranking
+SELECT t.id AS tarea_id, t.recompensa
+FROM tareas t
+INNER JOIN ranking r ON t.ranking_id = r.id
+WHERE r.id = /*id*/;
 --mirar notificaciones recientes
+SELECT *
+FROM notis
+ORDER BY fecha DESC
 --ver clasificion de mapa
-
+SELECT *
+FROM ranking
+WHERE curso_id = /*idcurso*/
+ORDER BY evaluacion DESC;
 --usar item (catalejo, bomba, etc) sobre alguien
-SELECT item FROM inventario
+SELECT objeto, alumno_id
+FROM inventario
+WHERE tipo = 'item'
+AND alumno_id = /*id*/;
 --elegir cursos
 SELECT * FROM cursos 
 WHERE nombre= " "/*nombre*/;
