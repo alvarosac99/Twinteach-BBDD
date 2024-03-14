@@ -79,4 +79,7 @@ VALUES (/*id del cursito*/);
 --ver clasificion de mapa
 
 --usar item (catalejo, bomba, etc) sobre alguien
+SELECT item FROM inventario
 --elegir cursos
+SELECT * FROM cursos 
+WHERE nombre= " "/*nombre*/;
